@@ -37,3 +37,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'General-Development-001(2fbb50ed-6abb-4f2b-bc80-be2155eb6a35)'
+    appName: 'CoreRock-Docker-d-euw-001-svc'
+    containers: 'corerockdockerdeuw001cr.azurecr.io/leftoverricepythonsamplevscodeflasktutorial:latest'
